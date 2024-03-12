@@ -41,7 +41,7 @@ module.exports.updateListing = async(req,res)=>{
     let {id} = req.params;
     let {category} = req.body.listing;
     if(category=="Choose Category"){
-        category="Trending";
+        req.body.listing.category="Trending";
     }
     let listing = await Listing.findByIdAndUpdate(id,req.body.listing,{new:true});
     // if(typeof req.file != "undefined"){
