@@ -28,6 +28,14 @@ const User= require("./models/user.js");
 const Listing = require("./models/listing.js");
 const { error } = require("console");
 
+main()
+.then(res=>console.log("connected"))
+.catch(err=>console.log(err));
+
+async function main(){
+    await mongoose.connect(dbUrl);
+}
+
 app.use(express.static (path.join(__dirname,"/public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -76,11 +84,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-async function main(){
-    await mongoose.connect(dbUrl);
-}
-main().then(res=>console.log("connected"));
-main().catch(err=>console.log(err));
 
 app.listen(8080, (req,res)=>{
     console.log("listening");
