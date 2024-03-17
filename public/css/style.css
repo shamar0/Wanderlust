@@ -78,6 +78,9 @@ body{
     background-color: rgb(255, 255, 255);
     opacity: 0.2;
 }
+.review-card{
+    margin-right: 1rem ;
+}
 
 /* for all buttons */
 /* .btn{
@@ -104,4 +107,8 @@ body{
 .btn-preview{
     position: relative;
     margin-right: 3.5rem !important;
+}
+.carousel-indicators-slider{
+    position: absolute !important;
+    left: -30rem !important;
 }
