@@ -23,6 +23,7 @@ router.route("/")
  
 router.get("/search",async(req,res)=>{
   let {country} = req.query;
+  country = country.toUpperCase();
   // console.log(req.query);
   let listings = await Listing.find({country:country});
   // console.log(listings);
@@ -44,7 +45,7 @@ router.get("/search",async(req,res)=>{
  router.get("/hiking",renderHikingListing);
 
  router.route("/:id")
-  .get(wrapAsync(showListing))
+  .get(showListing)
   .patch(isLoggedIn,isOwner,upload.array('listing[image]',4), validateListing,wrapAsync(updateListing))
   .delete(isOwner, wrapAsync(destroyListing));
 

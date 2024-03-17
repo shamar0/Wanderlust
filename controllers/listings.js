@@ -15,15 +15,21 @@ module.exports.renderNewForm = (req,res)=>{
 }
 
 module.exports.showListing = async(req,res)=>{
-    let listing = await Listing.findById(req.params.id)
-    .populate({path:"reviews",populate:{path:"author"}})
-    .populate("owner");
-    if(!listing){ 
-        req.flash("error","Listing which you are trying to access doesn't exist");
-        res.redirect("/listings");
+    try{
+
+        let listing = await Listing.findById(req.params.id)
+        .populate({path:"reviews",populate:{path:"author"}})
+        .populate("owner");
+        if(!listing){ 
+            req.flash("error","Listing which you are trying to access doesn't exist");
+            res.redirect("/listings");
+        }
+        // console.log(listing);
+        res.render("listings/show.ejs",{listing});
     }
-    // console.log(listing);
-    res.render("listings/show.ejs",{listing});
+    catch{
+        res.render("listings/error2.ejs");
+    }
 };
 
 module.exports.renderEditForm = async(req,res)=>{ 
@@ -43,11 +49,12 @@ module.exports.updateListing = async(req,res)=>{
     if(category=="Choose Category"){
         req.body.listing.category="Trending";
     }
+    req.body.listing.country=req.body.listing.country.toUpperCase();
     let listing = await Listing.findByIdAndUpdate(id,req.body.listing,{new:true});
     // if(typeof req.file != "undefined"){
-        while(listing.image.length!=0){
-            listing.image.pop();
-        }
+        // while(listing.image.length!=0){
+        //     listing.image.pop();
+        // }
         if(req.files){
             for(const file of req.files){
                 let url = file.path;
