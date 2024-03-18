@@ -3,7 +3,6 @@ const router = express.Router();
 
 const Listing = require("../models/listing.js");
 const wrapAsync = require("../utils/wrapAsync.js");
-const {listingSchema,reviewSchema} = require("../schema.js");
 const {validateListing,isLoggedIn, isOwner} = require("../middleware.js");
 const {index, renderNewForm,showListing,createNewListing, renderEditForm,updateListing, destroyListing,renderTrendingListing,
   renderRoomsListing,renderMountainsListing,renderPoolsListing,renderArcticListing,renderFarmListing,renderBeachListing,renderLakesListing,renderHikingListing} = require("../controllers/listings.js");

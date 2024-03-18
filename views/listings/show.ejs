@@ -1,12 +1,15 @@
 <% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/style.css">
+
 <body>
-    <div class="row offset-1 mt-5">
+    <div class="row show-card offset-1 mt-5">
         <h4><%=listing.title%></h4>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators carousel-indicators-slider ">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" data-bs-interval="2000" ></button>
+            <%for(let i=1; i<listing.image.length; i++){%>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=i%>" aria-label="Slide <%=i+1%>" data-bs-interval="2000"></button>
+              <%}%>
           </div>
           <div class="carousel-inner">
             <a href="/listings/<%=listing._id%>/preview/<%=listing.image[0]._id%>">
@@ -25,7 +28,7 @@
         </div>
         <p><i>owned by <%=listing.owner.username%></i></p>
         <p><%=listing.description%></p>
-        <p style="font-weight: 500;">  &#x20B9; <%=listing.price.toLocaleString("en-IN")%>/night</p>
+        <p style="font-weight: 600;">  &#x20B9; <%=listing.price.toLocaleString("en-IN")%>/night</p>
         <p><%=listing.location%></p>
         <p><%=listing.country%></p>
         <%if(currUser && currUser._id.equals(listing.owner._id)){%>

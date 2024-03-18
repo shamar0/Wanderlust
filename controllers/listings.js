@@ -45,10 +45,6 @@ module.exports.renderEditForm = async(req,res)=>{
 
 module.exports.updateListing = async(req,res)=>{
     let {id} = req.params;
-    let {category} = req.body.listing;
-    if(category=="Choose Category"){
-        req.body.listing.category="Trending";
-    }
     req.body.listing.country=req.body.listing.country.toUpperCase();
     let listing = await Listing.findByIdAndUpdate(id,req.body.listing,{new:true});
     // if(typeof req.file != "undefined"){
@@ -83,6 +79,7 @@ module.exports.destroyListing = async(req,res)=>{ //no need to check isLoggedIn 
 };
 
 module.exports.createNewListing = async(req,res,next)=>{
+    req.body.listing.country=req.body.listing.country.toUpperCase();
     const newListing = new Listing(req.body.listing);
     if(req.files){
         for(const file of req.files){
@@ -95,8 +92,6 @@ module.exports.createNewListing = async(req,res,next)=>{
         let url = req.file.path;
         let filename = req.file.filename;
         newListing.image.push({url,filename});
-        console.log(url);
-        console.log(filename);
     }
     newListing.owner = req.user._id;
     // console.log(newListing);

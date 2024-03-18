@@ -1,14 +1,13 @@
 
 <% layout("/layouts/boilerplate") %>
 
-    <div id="carouselExample" class="  offset-1 mt-4 carousel slide">
+    <div id="carouselExample" class="show-preview offset-1 mt-4 carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img style="height:32rem; width: 70rem; border-radius: 1.8rem;" src="<%=listing.image[0].url%>"  alt="...">
           </div>
     
          <%for(let i=1; i<listing.image.length; i++){%>
-          
             <div class="carousel-item">
               <img style="height:32rem; width: 70rem; border-radius: 1.8rem;" src="<%=listing.image[i].url%>"  alt="...">
             </div>
