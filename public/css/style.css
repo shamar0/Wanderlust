@@ -112,9 +112,7 @@ body{
     position: absolute !important;
     left: -30rem !important;
 }
-.show-card{
+.show-card, .show-preview, .i-filter{
     margin-top: 8rem !important;
   }
-  .show-preview{
-    margin-top: 8rem !important;
-}
+ 
