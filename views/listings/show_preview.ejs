@@ -2,7 +2,7 @@
 <% layout("/layouts/boilerplate") %>
 <link rel="stylesheet" href="/css/add-res.css">
 
-    <div id="carouselExample" class="show-preview offset-1 mt-4 carousel slide">
+    <div id="carouselExample" class="show-preview  mt-4 carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="img-fluid" style="height:32rem; width: 70rem; border-radius: 1.8rem;" src="<%=listing.image[0].url%>"  alt="...">
@@ -13,8 +13,7 @@
               <img class="img-fluid" style="height:32rem; width: 70rem; border-radius: 1.8rem;" src="<%=listing.image[i].url%>"  alt="...">
             </div>
          <%}%>
-        </div>
-        <button class="carousel-control-prev d-block w-0 btn-preview" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+         <button class="carousel-control-prev d-block w-0 btn-preview" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
@@ -22,6 +21,8 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        </div>
+        
       </div>
       <br> <br>
 

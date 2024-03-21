@@ -105,14 +105,12 @@ body{
 }
 
 .btn-preview{
-    position: relative;
-    margin-right: 3.5rem !important;
+    position: absolute;
+    margin-right: 5% !important;
 }
 .carousel-indicators-slider{
     position: absolute !important;
     left: -30rem !important;
 }
-.show-card, .show-preview, .i-filter{
-    margin-top: 8rem !important;
-  }
+
  
