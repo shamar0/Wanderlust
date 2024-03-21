@@ -4,23 +4,23 @@
 <body>
     <div class="row show-card offset-1 mt-5">
         <h4><%=listing.title%></h4>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators carousel-indicators-slider ">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" data-bs-interval="2000" ></button>
-            <%for(let i=1; i<listing.image.length; i++){%>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=i%>" aria-label="Slide <%=i+1%>" data-bs-interval="2000"></button>
-              <%}%>
-          </div>
-          <div class="carousel-inner">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div style="width:46rem;" class="carousel-inner">
+            <div style=" width:92.5rem ;" class="carousel-indicators carousel-indicators-slider ">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" data-bs-interval="2000" ></button>
+              <%for(let i=1; i<listing.image.length; i++){%>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=i%>" aria-label="Slide <%=i+1%>" data-bs-interval="2000"></button>
+                <%}%>
+            </div>
             <a href="/listings/<%=listing._id%>/preview/<%=listing.image[0]._id%>">
               <div class="carousel-item active">
-                <img  style="height:16rem; width: 46rem;  border-radius: 1.8rem;"  src="<%=listing.image[0].url%>"  alt="...">
+                <img class="img-fluid" style="height:16rem; width: 46rem;  border-radius: 1.8rem;"  src="<%=listing.image[0].url%>"  alt="...">
               </div>
               </a>
               <%for(let i=1; i<listing.image.length; i++){%>
                 <a href="/listings/<%=listing._id%>/preview/<%=listing.image[i]._id%>">
               <div class="carousel-item">
-                <img  style="height:16rem; width: 46rem; border-radius: 1.8rem;"  src="<%=listing.image[i].url%>"  alt="...">
+                <img class="img-fluid" style="height:16rem; width: 46rem; border-radius: 1.8rem;"  src="<%=listing.image[i].url%>"  alt="...">
               </div>
               </a>
               <%}%>
