@@ -27,10 +27,10 @@
      border-radius: 0.7rem;
      padding: 0.5rem 1rem 0.5rem 1rem !important;
   }
-
   .tax-info{
-     visibility: hidden;
+    display: none;
   }
+  
 
   .show-card{
     margin-left: 3rem;
