@@ -28,7 +28,7 @@
         </div>
         <p><i>owned by <%=listing.owner.username%></i></p>
         <p><%=listing.description%></p>
-        <p style="font-weight: 600;">  &#x20B9; <%=listing.price.toLocaleString("en-IN")%>/night</p>
+        <p style="font-weight: 600;">  &#x20B9; <%=((listing.price)*(1.18)).toLocaleString("en-IN")%>/night <i style="font-weight: 600; opacity: 0.9;" > &nbsp;&nbsp;(inclusive 18% tax)</i></p>
         <p><%=listing.location%></p>
         <p><%=listing.country%></p>
         <%if(currUser && currUser._id.equals(listing.owner._id)){%>

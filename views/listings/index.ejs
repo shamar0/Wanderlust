@@ -77,25 +77,13 @@
             <div class="card-img-overlay"></div>
             <div class="card-body">
               <h6 class="card-title"><%=listing.title%></h6>
-              <p style="font-weight: 600; opacity: 0.9;"> &#x20B9; <%=listing.price.toLocaleString("en-IN")%>/night  <i style="font-weight: 600; opacity: 0.9;" class="tax-info"> &nbsp;&nbsp;+18% GST</i></p>
+              <p class="before-tax-info" style="font-weight: 600; opacity: 0.9;"> &#x20B9; <%=listing.price.toLocaleString("en-IN") %>/night  </p>
+              <p class="tax-info" style="font-weight: 600; opacity: 0.9;"> &#x20B9; <%=((listing.price)*(1.18)).toLocaleString("en-IN")%>/night  <i style="font-weight: 600; opacity: 0.9;" > &nbsp;&nbsp;(inclusive 18% tax)</i></p>
             </div>
         </a>
           </div>
           <%}%>
     </div>
            
-    <script>
-      let taxSwitch = document.querySelector(".check-tax");
-      taxSwitch.addEventListener("click", ()=>{
-        let taxInfo = document.getElementsByClassName("tax-info");
-        for(info of taxInfo){
-          if(info.style.visibility != "visible"){
-              info.style.visibility ="visible";
-          }
-          else{
-              info.style.visibility ="hidden";
-          }
-        }
-      })
-  </script>
+    <script src="/js/tax.js"> </script>
 </body>
