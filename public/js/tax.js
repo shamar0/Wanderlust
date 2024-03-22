@@ -1,4 +1,7 @@
 let taxSwitch = document.querySelector(".check-tax");
+window.onload = function() {
+    taxSwitch.checked = false; // or true, based on your requirement
+};
 
 taxSwitch.addEventListener("click", ()=>{
   let taxInfo = document.querySelectorAll(".tax-info");
