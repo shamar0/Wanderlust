@@ -67,5 +67,66 @@
     }
   }
 
+  /* weather  */
+ .weather_card{
+  display: none;
+}
+.form{
+  display: flex;
+  /* justify-content: baseline; */
+}
+.form input{
+  border-radius:0.4rem;
+  margin-right: 0.3rem;
+}
+
+.weather-top{
+  padding: 2rem !important;
+}
+#myCard{
+  border-radius: 0.7rem;
+}
+.inside-weather-card {
+   margin: 0.3rem 0 0.1rem 0.5rem !important;
+   
+}
+#myCard > .card-body{
+   padding: 1rem !important;
+}
+
+/* .weather-row{
+  display: flex !important;
+  flex-direction: row !important;
+  
+} */
+.m-weather-card{
+  /* margin: 2rem 1rem 14rem  !important; */
+  margin-top: 3.2rem;
+  flex-grow: 1;
+}
+@media (max-width:400px) {
+  .weather-top{
+  padding: 0 !important;
+}
+
+}
+@media (max-width:767px){
+  .weather-row{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important;
+  }
+  .m-weather-card{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .m-weather-card > #myCard{
+  width: 90% !important;
+ 
+}
+}
 
  
