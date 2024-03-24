@@ -47,6 +47,43 @@
         <%}%>
        </div>
 
+
+       <br><br>
+       <div  class=" show-card card col-lg-9">
+        
+        <h5 class="card-header"><b>Weather condition</b></h5>
+        
+        <div class="card-body weather-top">
+          <div class="weather-row">
+          <div>
+          <h4 class="card-title"> <i>Want to check current weather?</i></h4> <br>
+          <form id="myForm" >
+          <div class="form">
+              <input type="text" name="location" placeholder="Enter location" value="<%=listing.country%>">
+              <button class="btn btn-primary" id="weatherBtn">Click here</button>
+            </div>
+          </form>
+        </div>
+        <div class="m-weather-card">
+          <div id="myCard" class="card weather_card" style="width: 60%; ">
+            <img id="weather_img" class="img-fluid" src ="https://images.unsplash.com/photo-1565065524861-0be4646f450b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJhaW55fGVufDB8fDB8fHww" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 id="searchedLocation" class="card-title inside-weather-card"><b><%=listing.country%></b></h5>
+              <p id="temp" class="card-text  inside-weather-card">Temperature : ___&deg;C</p>
+              <p id="humidity" class="card-text inside-weather-card">Humidity: ___</p>
+              <p id="visibility" class="card-text inside-weather-card">Visibility: ___</p>
+              <p id="min_temp" class="card-text inside-weather-card">Min_Temp: ___&deg;C</p>
+              <p id="max_temp" class="card-text inside-weather-card">Max_Temp: ___&deg;C</p>
+              <p id="weather" class="card-text inside-weather-card">The weather can be described as <i>'___'</i>  </p>
+            
+            </div>
+          </div>
+          </div>  <!-- row -->   
+          </div>
+        </div>
+      </div>
+    
+
   
         <div class="show-card">
          <%if (currUser){ %>
@@ -107,5 +144,7 @@
          <%}%>
         
    </div>
-   <%}%>   
+   <%}%>  
+   
+   <script src="/js/weather.js"> </script>
 </body>
