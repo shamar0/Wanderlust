@@ -15,12 +15,48 @@
     background: transparent !important;
     backdrop-filter: blur(50px);
   }
+  .underline-overline-on-hover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-overline-on-hover::before,
+.underline-overline-on-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px; /* Adjust the thickness of the lines */
+  background-color: #222; /* Adjust the color of the lines */
+  transition: transform 0.3s ease-out, width 0.3s ease-out;
+  transform: scaleX(0); /* Initially, lines have zero width */
+}
+
+.underline-overline-on-hover::before {
+  top: 0;
+}
+
+.underline-overline-on-hover::after {
+  bottom: 0;
+}
+
+.underline-overline-on-hover:hover::before,
+.underline-overline-on-hover:hover::after {
+  transform: scaleX(1); /* Expand lines to full width on hover */
+}
+  
   @media (max-width:766px){
     #navbarNavAltMarkup{
       background:fixed;
       background-color: white;
-      
+      border-bottom: 2px solid grey;
+      border-radius: 10px;
     }
+    .underline-overline-on-hover:hover::before,
+.underline-overline-on-hover:hover::after {
+  transform: scaleX(0); /* Expand lines to full width on hover */
+}
   }
 </style>
 
